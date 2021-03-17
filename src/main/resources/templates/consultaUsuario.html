@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:ref="@{/css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css" ></link>
+<meta charset="ISO-8859-1">
+<title>E-Tecnova</title>
+</head>
+
+<body class="container">
+	<br>
+	<header>
+		<div class="cabeza">
+    		<h1>E-Tecnova</h1>
+  		</div>
+	</header>
+	
+	<div th:insert="layout/header :: header"></div>
+	
+		<form th:object="${user}" th:action="${consultaUsuario}" method="post" class="form-group" id="consultaUsu">
+			<br>
+			<label for="user" class="form-group col-md-12">Buscar usuario</label>
+			<input id="user" type="text" th:field="${user}"  class="form-control"><br>
+			<div>
+				<label for="enviar"></label>
+				<input id="enviar" type="submit" value="Buscar">
+			</div>
+		</form>
+		
+		<form action="Admin">
+			
+			<input type="submit" value="Volver">
+		</form>
+
+	
+	<div th:insert="layout/footer :: footer"></div>
+	
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleof.org">
+<head>
+<link th:ref="@{/css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css" ></link>
+<meta charset="ISO-8859-1">
+<title>E-Tecnova</title>
+</head>
+
+<body class="container">
+	<br>
+	<header>
+		<div class="cabeza">
+    		<h1>E-Tecnova</h1>
+  		</div>
+	</header>
+	
+	<div th:insert="layout/headerCliente :: headerCliente"></div>
+	
+	<p th:text="'Bienvenido, ' + ${nombre} + '(' + ${idUsuario} + ')'"></p>
+	
+	<br>
+		<h3>Productos</h3><br>
+			<div>
+				<table class="table">
+				    <tr>
+				      <th scope="col">Id Producto</th>
+				      <th scope="col">Nombre del Producto</th>
+				      <th scope="col">Descripcion</th>
+				      <th scope="col">Disponibilidad</th>
+				      <th scope="col">Costo</th>
+				    </tr>
+					<tr th:each="producto : ${productos}">
+						<td th:text="${producto.idProd}"></td>
+						<td th:text="${producto.nombreProd}"></td>
+						<td th:text="${producto.descripcionProd}"></td>
+						<td th:text="${producto.disponibilidad}"></td>
+						<td th:text="${producto.costo}"></td>
+					</tr>
+				</table>
+			</div>
+				<br>
+				<form id="nuevaCompra" th:object="${nuevaCompr}" th:action="${comprar}" method="post">
+					
+					<div class="form-group col-md-6">
+						<label>Producto</label> <br> 
+						<select th:field="*{producto.idProd}" class="form-select form-select-lg mb-3">
+							<option th:each="producto : ${productos}" th:value="${producto.idProd}" th:text="${producto.nombreProd}"></option>
+						</select>
+					</div>
+						<div>
+							<button type="submit" value="Guardar">Comprar</button>					
+						</div>
+				</form>
+
+			
+			<form action="Cliente">
+				<input type="submit" value="Volver">
+			</form>
+						
+	<div th:insert="layout/footer :: footer"></div>
+	
+</body>
+</html>

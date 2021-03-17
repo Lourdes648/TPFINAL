@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleof.org">
+<head>
+<link th:ref="@{/css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css" ></link>
+<meta charset="ISO-8859-1">
+<title>E-Tecnova</title>
+</head>
+
+<body class="container">
+	<br>
+	<header>
+		<div class="cabeza">
+    		<h1>E-Tecnova</h1>
+  		</div>
+	</header>
+	
+	<div th:insert="layout/header :: header"></div>
+	<br>
+	<form id="nuevoProd" th:object="${nuevoProd}" th:action="${nuevoProducto}" method="post">
+		<div class="form-row">
+		    <div class="form-group col-md-6">
+		    <label for="nombreProd">Nombre del Producto</label>
+		    <input type="text" class="form-control" id="nombreProd" th:field="*{nombreProd}">
+		    </div>
+			<div class="form-group col-md-6">
+		    <label for="cantidadProd">Cantidad del producto</label>
+		    <input type="number" class="form-control" id="cantidadProd" th:field="*{cantidadProd}">
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="form-group col-md-12">
+		    <label for="descripcion">Descripcion</label>
+		    <input type="text" class="form-control" id="descripcionProd" th:field="*{descripcionProd}">
+		    </div>
+		</div>
+		<div class="form-row">
+		    <div class="form-group col-md-4">
+		    	<label for="costo">Costo $</label>
+		    	<input type="number" class="form-control" id="costo" th:field="*{costo}">
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<label for="disponibilidad">Disponibilidad</label>
+		    	<input type="text" class="form-control" id="disponibilidad" placeholder="Si/No" th:field="*{disponibilidad}">
+		</div>
+		
+		<div>
+			<button type="submit" value="Agregar">Agregar</button>
+		</div>
+		
+	</form>
+	
+	<form action="Admin">
+		<input type="submit" value="Volver">
+	</form>
+
+	<div th:insert="layout/footer :: footer"></div>
+	
+</body>

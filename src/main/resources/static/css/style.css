@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+
+.cabeza{
+	text-align: center;
+	color: #8000ff;
+	padding:0,9%;
+	font-size: x-large;
+}
+.navegador{
+	margin: 1%;
+	padding: 1%;
+	background: #8080ff;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.navs{
+  color: #ff00ff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 1%;
+  text-align: center;
+}
+
+.login-page {
+  width: 360px;
+  padding: 1%;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #8080c0;
+  max-width: 360px;
+  padding-top: 20px;
+  padding: 8%;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.link {
+  color: #ff80c0;
+  text-decoration: none;
+}

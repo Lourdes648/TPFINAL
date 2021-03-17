@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleof.org">
+<head>
+<link th:ref="@{/css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.0/css/bootstrap.min.css" ></link>
+<meta charset="ISO-8859-1">
+<title>E-Tecnova</title>
+</head>
+
+<body class="container">
+	<br>
+	<header>
+		<div class="cabeza">
+    		<h1>E-Tecnova</h1>
+  		</div>
+	</header>
+	
+	<div th:insert="layout/headerCliente :: headerCliente"></div>
+	<br>
+	    <div class="container">
+	    	<table class="table">
+		    <tr>
+		      <th scope="col">Id de Compra</th>
+		      <th scope="col">Producto</th>
+		      <th scope="col">Total</th>
+		    </tr>
+		    <tr th:each="compra : ${compras}">
+		      <td th:text="${compra.idCompra}"></td>
+		      <td th:text="${producto.idProducto}"></td>
+		      <td th:text="${compra.total}"></td>
+		    </tr>
+		</table>
+	    </div>
+	    
+	    <form action="Cliente" class="form-group">
+				<input type="submit" value="Volver">
+		</form>
+		
+	<div th:insert="layout/footer :: footer"></div>
+		
+</body>
+</html>
